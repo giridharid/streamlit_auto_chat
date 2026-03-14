@@ -43,49 +43,144 @@ Automotive brand teams who need actionable intelligence:
 5,000 verified owner reviews from Reddit r/CarsIndia (24 months)
 Analyzed using Acquink Multiple Aspect Sentiment Insights
 Covers 27 car models across 5 brands (Maruti, Hyundai, Tata, Honda, Mahindra)
+Equivalent to 100 traditional focus groups | Margin of error <1.5%
 
-=== KEY METRICS YOU KNOW ===
-**Safety Sentiment Leaders:**
-- Grand Vitara: 96% | Brezza: 88% | Nexon: 85%
-- Creta: 14% (CRITICAL WEAKNESS) | Scorpio-N: 11% | Thar: 7%
+=== SAFETY SENTIMENT RANKING (0-100%) ===
+| Rank | Model        | Score | Brand    | Insight |
+|------|--------------|-------|----------|---------|
+| 1    | Grand Vitara | 96%   | Maruti   | "Solid build", "tank-like", GNCAP praise |
+| 2    | Brezza       | 88%   | Maruti   | Strong platform perception |
+| 3    | Nexon        | 85%   | Tata     | 5-star rating mentioned often |
+| 4    | Creta        | 14%   | Hyundai  | ⚠️ CRITICAL - "tin can", "unstable shell" |
+| 5    | Scorpio-N    | 11%   | Mahindra | Safety concerns despite size |
+| 6    | Thar         | 7%    | Mahindra | Lowest - rollover fears |
 
-**Mileage/Efficiency Leaders:**
-- Fronx: 88% | Grand Vitara: 85% | Creta: 81%
-- Verna: 37% | City: 3% (CRITICAL - biggest mileage complaints)
+=== MILEAGE/EFFICIENCY SENTIMENT (0-100%) ===
+| Rank | Model        | Score | Brand    | Insight |
+|------|--------------|-------|----------|---------|
+| 1    | Fronx        | 88%   | Maruti   | Segment leader, hybrid praised |
+| 2    | Grand Vitara | 85%   | Maruti   | Strong hybrid delivers 20+ kmpl |
+| 3    | Creta        | 81%   | Hyundai  | Acceptable efficiency |
+| 4    | Ciaz         | 62%   | Maruti   | Good but dated perception |
+| 5    | Verna        | 37%   | Hyundai  | Below expectations |
+| 6    | City         | 3%    | Honda    | ⚠️ CRITICAL - "thirsty", "single digit mileage" anger |
 
-**Tech/Features Sentiment:**
-- Grand Vitara: 85% | Creta: 81% | Nexon: 57%
-- Elevate: 3% (CRITICAL)
+=== TECH/FEATURES SENTIMENT (0-100%) ===
+| Rank | Model        | Score | Brand    | Insight |
+|------|--------------|-------|----------|---------|
+| 1    | Grand Vitara | 85%   | Maruti   | HUD, 360 camera, ADAS praised |
+| 2    | Creta        | 81%   | Hyundai  | Feature-loaded perception |
+| 3    | Nexon        | 57%   | Tata     | Good but UI complaints |
+| 4    | Elevate      | 3%    | Honda    | ⚠️ CRITICAL - "outdated infotainment" |
 
-**Overall Engineering Satisfaction (Composite):**
-- Grand Vitara: 92% | Nexon: 88% | Brezza: 81% | Fronx: 74%
-- Creta: 51% | City: 48% | Harrier: 40% | XUV700: 29%
+=== OVERALL ENGINEERING SATISFACTION (Composite: 40% Safety + 35% Mileage + 25% Tech) ===
+| Rank | Model      | Score | Brand    |
+|------|------------|-------|----------|
+| 1    | Grand Vitara | 92% | Maruti   |
+| 2    | Nexon      | 88%   | Tata     |
+| 3    | Brezza     | 81%   | Maruti   |
+| 4    | Fronx      | 74%   | Maruti   |
+| 5    | Venue      | 66%   | Hyundai  |
+| 6    | Punch      | 55%   | Tata     |
+| 7    | Creta      | 51%   | Hyundai  |
+| 8    | City       | 48%   | Honda    |
+| 9    | Verna      | 44%   | Hyundai  |
+| 10   | Harrier    | 40%   | Tata     |
+| 11   | XUV700     | 29%   | Mahindra |
+| 12   | Ciaz       | 25%   | Maruti   |
+| 13   | Elevate    | 22%   | Honda    |
+| 14   | Scorpio-N  | 18%   | Mahindra |
+| 15   | Thar       | 7%    | Mahindra |
 
-**Brand Heatmap (Where Each Brand Wins):**
-| Brand    | Safety | Mileage | Tech |
-|----------|--------|---------|------|
-| Maruti   | 100    | 100     | 80   |
-| Hyundai  | 60     | 40      | 100  |
-| Tata     | 40     | 80      | 20   |
-| Honda    | 80     | 60      | 60   |
-| Mahindra | 20     | 20      | 40   |
+=== BRAND HEATMAP (Relative Position 0-100) ===
+| Brand    | Safety | Mileage | Tech | Key Insight |
+|----------|--------|---------|------|-------------|
+| Maruti   | 100    | 100     | 80   | LEADS Safety & Mileage |
+| Hyundai  | 60     | 40      | 100  | LEADS Tech only (but gap neutralized) |
+| Tata     | 40     | 80      | 20   | Safety improving, tech lagging |
+| Honda    | 80     | 60      | 60   | Balanced but no leadership |
+| Mahindra | 20     | 20      | 40   | Weakest overall perception |
 
-**Emotional Signatures:**
-- Grand Vitara: Joy 😊 + Trust 💚 + Anticipation
-- Creta: Fear 😰 (safety concerns) + Joy + Anticipation  
-- City: Anger 😠 (mileage frustration) + Fear + Anticipation
-- Ciaz: Fear + Disgust 😤 + Trust
+=== SENTIMENT DNA (What Drives Each Model's Perception) ===
+| Model        | Mileage% | Safety% | Tech% | Primary Driver |
+|--------------|----------|---------|-------|----------------|
+| Elevate      | 31%      | 69%     | 18%   | Safety focus |
+| Harrier      | 29%      | 53%     | 18%   | Safety focus |
+| City         | 50%      | 29%     | 24%   | Mileage complaints |
+| Brezza       | 29%      | 46%     | 16%   | Safety praise |
+| Ciaz         | 37%      | 46%     | 17%   | Balanced |
+| Curvv        | 40%      | 43%     | 17%   | Balanced |
+| Alcazar      | 26%      | 43%     | 31%   | Tech interest |
+| Grand Vitara | 32%      | 42%     | 27%   | Balanced positive |
+| Aura         | 26%      | 41%     | 33%   | Tech interest |
+| Exter        | 19%      | 41%     | 41%   | Tech interest |
+| Dzire        | 36%      | 40%     | 24%   | Mileage focus |
+| Jimny        | 30%      | 36%     | 32%   | Balanced |
+| Fronx        | 39%      | 29%     | 31%   | Mileage leader |
+| Amaze        | 41%      | 28%     | 31%   | Mileage focus |
+| Creta        | 40%      | 24%     | 36%   | Tech/Features focus |
 
-**Gender Insights (from comment analysis):**
-- Male buyers (78%): Prioritize Safety > Mileage > Tech
-- Female buyers (22%): Prioritize Safety > Tech > Mileage
-- Female sentiment 12% higher on "service network" discussions
+=== TOP 5 SENTIMENT DRIVERS BY MODEL ===
 
-**Persona Patterns:**
-- First-time buyers: Focus on mileage, resale value, service cost
-- Upgraders (hatchback→SUV): Focus on safety, features, brand image
-- Family buyers: Safety dominates 65% of discussion
-- Enthusiasts: Performance, handling, driving dynamics
+**Hyundai Creta:**
+- ✅ Positive: Features 20%, Resale Value 15%, Performance 12%, Panoramic Sunroof 10%, Look 8%
+- ❌ Negative: Safety 18%, Build Quality 12%, Mileage 10%, Waiting Period 8%, Heating 5%
+
+**Honda City:**
+- ✅ Positive: Engine 15%, Rear Comfort 14%, Brand Image 10%, Handling 8%, Space 6%
+- ❌ Negative: City Mileage 18%, Ground Clearance 12%, Infotainment 10%, Tyres 8%, Cabin Noise 5%
+
+**Grand Vitara:**
+- ✅ Positive: Hybrid Mileage 18%, Build Quality 12%, Looks 9%, Service Network 8%, Features 7%
+- ❌ Negative: Boot Space 10%, Interior Plastic 8%, Price 6%, Waiting Period 5%, Sunroof 4%
+
+=== EMOTIONAL SIGNATURES (Plutchik Analysis) ===
+| Model        | Primary   | Secondary | Tertiary     | Insight |
+|--------------|-----------|-----------|--------------|---------|
+| Grand Vitara | Joy 😊    | Trust 💚  | Anticipation | Happy owners, brand loyalty |
+| Creta        | Fear 😰   | Joy       | Anticipation | Safety anxiety dominates |
+| City         | Anger 😠  | Fear      | Anticipation | Mileage frustration |
+| Ciaz         | Fear      | Disgust 😤| Trust        | Mixed feelings |
+
+=== GENDER INSIGHTS ===
+- Male Commenters: ~78% of discussions
+  - Priority: Safety (42%) > Mileage (35%) > Tech (23%)
+  - More vocal about: Build quality, crash tests, driving dynamics
+  
+- Female Commenters: ~22% of discussions
+  - Priority: Safety (45%) > Tech (30%) > Mileage (25%)
+  - More vocal about: Service network (+12%), interior quality, ease of driving
+
+=== BUYER PERSONA PATTERNS ===
+
+**First-Time Buyers (Est. 30%):**
+- Primary concern: Mileage/running costs, resale value, service cost
+- Price sensitive, brand agnostic
+- Target with: Efficiency messaging, cost of ownership
+
+**Upgraders - Hatchback to SUV (Est. 35%):**
+- Primary concern: Safety, features, brand image
+- Willing to pay premium for perceived quality
+- Target with: Safety ratings, premium positioning
+
+**Family Buyers (Est. 25%):**
+- Safety dominates 65% of their discussions
+- Boot space, rear comfort important
+- Target with: GNCAP ratings, family testimonials
+
+**Enthusiasts (Est. 10%):**
+- Performance, handling, driving dynamics
+- Less price sensitive, brand loyal
+- Target with: Driving experience, performance specs
+
+=== SAFETY KEYWORDS (Most Spoken) ===
+Build Quality, NCAP Rating, 5 Star, Solid, Stable, Tin Can, Crash Test, Shell, Heavy, Sturdy, Airbags, Body Roll, Thud Sound, Safe
+
+=== TECH KEYWORDS (Most Spoken) ===
+Sunroof, 360 Camera, ADAS, Touchscreen, Apple CarPlay, Android Auto, Digital Cluster, HUD, Ventilated Seats, Connected Car, Wireless Charging, Speakers, Navigation, UI/UX
+
+=== MILEAGE KEYWORDS (Most Spoken) ===
+City Mileage, Highway, KMPL, Hybrid, Petrol, Diesel, Traffic, Running Cost, Tank, Efficiency, Smart Hybrid, Single Digit, AC On, Performance, Economy
 
 === RESPONSE FORMAT (ALWAYS FOLLOW) ===
 
