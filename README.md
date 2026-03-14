@@ -1,4 +1,4 @@
-# Smaartbrand Auto - Maruti POC
+# Smaartbrand Auto Intelligence
 
 **DeciPro DECIDE Engine - AI-Powered Automotive Sentiment Analysis**
 
@@ -125,7 +125,7 @@ Each response includes:
 | `GET /api/aspects` | All aspect analysis |
 | `GET /api/executive-summary` | Dashboard KPIs |
 
-## 📊 Data Source
+## 📊 Data Source 
 
 - **Reddit r/CarsIndia**: 5,000 verified owner reviews
 - **Analysis Period**: 24 months
@@ -142,5 +142,7 @@ Each response includes:
 | Fronx 88% efficiency leader | "Mileage Champion" campaign |
 
 ---
+
+
 
 Built with ❤️ by Acquink | Powered by DeciPro DECIDE Engine
