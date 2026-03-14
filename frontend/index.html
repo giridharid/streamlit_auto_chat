@@ -19,6 +19,9 @@
     .markdown-content p { margin-bottom: 0.5rem; }
     .markdown-content ul { margin-left: 1.25rem; }
     .markdown-content strong { font-weight: 600; }
+    .markdown-content table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; font-size: 0.75rem; }
+    .markdown-content th, .markdown-content td { border: 1px solid #e5e7eb; padding: 0.25rem 0.5rem; text-align: left; }
+    .markdown-content th { background: #f9fafb; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -26,6 +29,70 @@
   
   <script type="text/babel">
     const { useState, useRef, useEffect } = React;
+
+    // Follow-up question generator based on query context
+    const getFollowUpQuestions = (query, response) => {
+      const q = query.toLowerCase();
+      const r = response.toLowerCase();
+      
+      // Context-aware follow-ups
+      if (q.includes('safety') || r.includes('safety')) {
+        return [
+          "How do I beat Creta on safety?",
+          "Which Maruti model is safest?",
+          "Safety sentiment by gender"
+        ];
+      }
+      if (q.includes('creta') || r.includes('creta')) {
+        return [
+          "Creta's top weaknesses",
+          "Compare Grand Vitara vs Creta",
+          "Target Creta considerers"
+        ];
+      }
+      if (q.includes('city') || r.includes('honda city')) {
+        return [
+          "Why do City owners complain?",
+          "Ciaz vs City comparison",
+          "Target City owners with?"
+        ];
+      }
+      if (q.includes('grand vitara') || r.includes('grand vitara')) {
+        return [
+          "Grand Vitara weaknesses",
+          "Compare with Nexon",
+          "Marketing messaging for GV"
+        ];
+      }
+      if (q.includes('build') || q.includes('new car') || q.includes('r&d')) {
+        return [
+          "What features should it have?",
+          "Which segment to target?",
+          "Competitor gaps to exploit"
+        ];
+      }
+      if (q.includes('mileage') || q.includes('efficiency')) {
+        return [
+          "Fronx efficiency insights",
+          "City mileage complaints",
+          "Hybrid sentiment analysis"
+        ];
+      }
+      if (q.includes('conquest') || q.includes('opportunity')) {
+        return [
+          "How to beat Creta?",
+          "Target Honda City owners",
+          "Mahindra weaknesses"
+        ];
+      }
+      
+      // Default follow-ups
+      return [
+        "What should Maruti build next?",
+        "Top conquest opportunities",
+        "Brand perception comparison"
+      ];
+    };
 
     // Chart.js Bar Chart Component
     const BarChartComponent = ({ data, title }) => {
@@ -193,6 +260,7 @@
       const [input, setInput] = useState('');
       const [isTyping, setIsTyping] = useState(false);
       const [aiStatus, setAiStatus] = useState({ checked: false, enabled: false, models: 0 });
+      const [lastQuery, setLastQuery] = useState('');
       const messagesEndRef = useRef(null);
 
       useEffect(() => {
@@ -206,14 +274,11 @@
 
 I've analyzed **${data.models_loaded || 27} car models** from Reddit r/CarsIndia.
 
-${data.ai_enabled ? '🟢 **Claude AI is ACTIVE** - Full AI responses enabled!' : '🟡 **Rule-based mode** - Add ANTHROPIC_API_KEY in Railway for full AI'}
+${data.ai_enabled ? '🟢 **AI is ACTIVE** - Full AI responses enabled!' : '🟡 **Rule-based mode** - Add ANTHROPIC_API_KEY in Railway for full AI'}
 
-**Try asking:**
-• "How do I beat Creta?"
-• "Tell me about Grand Vitara"
-• "Safety sentiment analysis"
-• "Conquest opportunities"`,
-              isMarkdown: true
+**Try asking:** • "How do I beat Creta?" • "Tell me about Grand Vitara" • "Safety sentiment analysis" • "Conquest opportunities"`,
+              isMarkdown: true,
+              showFollowUps: false
             }]);
           })
           .catch(() => {
@@ -230,6 +295,7 @@ ${data.ai_enabled ? '🟢 **Claude AI is ACTIVE** - Full AI responses enabled!' 
         const query = overrideInput || input;
         if (!query.trim()) return;
 
+        setLastQuery(query);
         setMessages(prev => [...prev, { role: 'user', content: query }]);
         setInput('');
         setIsTyping(true);
@@ -245,7 +311,9 @@ ${data.ai_enabled ? '🟢 **Claude AI is ACTIVE** - Full AI responses enabled!' 
             role: 'assistant',
             content: data.response,
             isMarkdown: true,
-            aiPowered: data.ai_powered
+            aiPowered: data.ai_powered,
+            showFollowUps: true,
+            followUps: getFollowUpQuestions(query, data.response)
           }]);
         } catch (error) {
           setMessages(prev => [...prev, {
@@ -263,19 +331,18 @@ ${data.ai_enabled ? '🟢 **Claude AI is ACTIVE** - Full AI responses enabled!' 
         <div className="flex flex-col h-[calc(100vh-64px)]">
           {aiStatus.checked && (
             <div className={`px-4 py-2 text-center text-sm ${aiStatus.enabled ? 'bg-green-50 text-green-700' : 'bg-amber-50 text-amber-700'}`}>
-              {aiStatus.enabled ? `🟢 Claude AI Active • ${aiStatus.models} models loaded` : `🟡 Rule-based Mode • ${aiStatus.models} models • Add ANTHROPIC_API_KEY for AI`}
+              {aiStatus.enabled ? `🟢 AI Active • ${aiStatus.models} models loaded` : `🟡 Rule-based Mode • ${aiStatus.models} models • Add ANTHROPIC_API_KEY for AI`}
             </div>
           )}
 
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((msg, i) => (
-              <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+              <div key={i} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
                 <div className={`max-w-2xl rounded-2xl px-4 py-3 ${msg.role === 'user' ? 'bg-blue-600 text-white' : 'bg-white shadow border'}`}>
                   {msg.role === 'assistant' && (
                     <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-100">
-                      <span className="text-lg">🤖</span>
+                      <span className="text-lg">🚗</span>
                       <span className="text-xs font-medium text-gray-500">DeciPro AI</span>
-                      {msg.aiPowered && <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded">Claude</span>}
                     </div>
                   )}
                   {msg.role === 'user' ? (
@@ -286,6 +353,21 @@ ${data.ai_enabled ? '🟢 **Claude AI is ACTIVE** - Full AI responses enabled!' 
                     <p className="text-sm text-gray-700">{msg.content}</p>
                   )}
                 </div>
+                
+                {/* Follow-up questions */}
+                {msg.role === 'assistant' && msg.showFollowUps && msg.followUps && i === messages.length - 1 && !isTyping && (
+                  <div className="mt-3 flex flex-wrap gap-2 max-w-2xl">
+                    {msg.followUps.map((followUp, j) => (
+                      <button
+                        key={j}
+                        onClick={() => handleSend(followUp)}
+                        className="px-3 py-1.5 bg-gray-100 hover:bg-blue-50 hover:text-blue-700 text-gray-600 text-xs rounded-full transition-colors border border-gray-200 hover:border-blue-200"
+                      >
+                        {followUp}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
             {isTyping && (
@@ -374,7 +456,7 @@ ${data.ai_enabled ? '🟢 **Claude AI is ACTIVE** - Full AI responses enabled!' 
 
               <div className="text-right text-xs text-gray-500 hidden md:block">
                 <p>Reddit r/CarsIndia</p>
-                <p className="font-medium">27 models • Live Data</p>
+                <p className="font-medium">5,000 reviews • 27 models</p>
               </div>
             </div>
           </div>
