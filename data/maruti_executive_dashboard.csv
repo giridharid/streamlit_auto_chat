@@ -1,0 +1,28 @@
+Model,Safety_Sentiment,Mileage_Sentiment,Tech_Features_Sentiment,Plutchik_Emotion,One_Line_Summary
+Alcazar,-0.03225806451612903,-0.008064516129032258,-0.008064516129032258,Neutral,Hyundai may expedite repair due noise
+Amaze,-0.032432432432432434,0.06486486486486487,0.032432432432432434,Neutral,Comparing Amaze unfavorably to Kwid
+Aura,-0.06451612903225806,-0.016129032258064516,-0.016129032258064516,Neutral,Negative comment on FWD performance
+Brezza,0.0374331550802139,0.016042780748663103,-0.0053475935828877,Neutral,"Great car, congratulations and hope"
+Ciaz,-0.05291005291005291,0.0,-0.05291005291005291,Neutral,"Legal advice after accident, Ciaz?"
+City,-0.026881720430107527,-0.05913978494623656,0.026881720430107527,Neutral,"Negative dealership experience, City unmentioned"
+Creta,-0.09523809523809523,0.025974025974025976,0.012987012987012988,Neutral,"Insurance advice, return to invoice"
+Curvv,-0.05405405405405406,0.009009009009009009,-0.04954954954954955,Neutral,"Looks beautiful, congratulations"
+Dzire,0.03802281368821293,0.049429657794676805,0.0076045627376425855,Neutral,"Humorous, not actual feedback"
+Elevate,-0.012875536480686695,-0.017167381974248927,-0.08583690987124463,Neutral,"Focus on driver, not car"
+Exter,0.050314465408805034,0.0,0.07547169811320754,Neutral,Compares Elevate sales to City
+Fronx,-0.05699481865284974,0.03626943005181347,0.015544041450777202,Neutral,"Accept purchase, move on, enjoy it"
+Grand Vitara,0.04477611940298507,0.03482587064676617,0.014925373134328358,Neutral,Grand Vitara: safe in accident
+Harrier,-0.027888446215139442,-0.01195219123505976,-0.04780876494023904,Neutral,"Harrier SUV disliked, EV possibly better"
+Jimny,-0.023923444976076555,0.023923444976076555,0.009569377990430622,Neutral,Jimny compared negatively to Thar
+Nexon,0.013392857142857142,0.06696428571428571,0.0,Neutral,"Existential luck, no Nexon feedback"
+Punch,-0.04326923076923077,-0.009615384615384616,0.0,Neutral,Caution advised for road safety
+Safari,-0.0782608695652174,-0.021739130434782608,-0.07391304347826087,Neutral,Error parsing
+Scorpio-N,-0.10344827586206896,-0.01293103448275862,-0.02586206896551724,Neutral,Safety concern: Impact felt raw
+Thar,-0.17120622568093385,-0.007782101167315175,0.0,Neutral,Irrelevant political statement.
+Tigor,-0.19607843137254902,-0.0196078431372549,-0.0392156862745098,Neutral,"Safety not everything, other factors matter"
+Tucson,-0.008620689655172414,-0.02586206896551724,0.0,Neutral,"Comment on SUV market, sarcastic tone"
+Venue,-0.033707865168539325,-0.0056179775280898875,0.0056179775280898875,Neutral,"Negative customer service, Tata unhelpful"
+Verna,-0.041237113402061855,-0.010309278350515464,-0.015463917525773196,Neutral,Verna buyers choose Creta instead
+XUV 3XO,-0.03571428571428571,0.0,0.008928571428571428,Neutral,"Poor dealership experience, switched to Honda"
+XUV300,-0.08333333333333333,-0.020833333333333332,-0.041666666666666664,Neutral,"Legal advice after accident, supportive."
+XUV700,-0.0784313725490196,-0.00784313725490196,-0.01568627450980392,Neutral,Petrol pump compensation advice/question.
