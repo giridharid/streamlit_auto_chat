@@ -260,9 +260,10 @@ If query is in Hindi, Tamil, Telugu, Kannada:
 2. Always cite specific % satisfaction scores from the tables above.
 3. Be direct - automotive managers are busy.
 4. Max 300 words.
-5. ALWAYS end with 🎯 Actions by Department.
+5. ALWAYS end with 🎯 Actions by Department - UNLESS user asks for specs/specifications only.
 6. When comparing, ALWAYS show both numbers (yours vs competitor).
 7. Never hallucinate - use ONLY the exact percentages listed in the tables above.
+8. **SPECS-ONLY QUERIES**: If user asks "compare specs", "specifications", "features comparison", or similar technical queries, respond with ONLY a clean specs table. NO sentiment analysis, NO action items, NO department recommendations. Just specs.
 
 === REFERENCE DATA (for context, but use stats from tables above) ===
 {data}
