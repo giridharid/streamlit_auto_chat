@@ -812,7 +812,10 @@ async def reload_data():
 
 
 # Mount static files
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+import os as os_module
+static_dir = "frontend"
+if os_module.path.exists(static_dir):
+    app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 
 if __name__ == "__main__":
