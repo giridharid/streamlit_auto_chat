@@ -264,7 +264,9 @@ If query is in Hindi, Tamil, Telugu, Kannada:
 6. When comparing, ALWAYS show both numbers (yours vs competitor).
 7. Never hallucinate - use ONLY the exact percentages listed in the tables above.
 8. **SPECS-ONLY QUERIES**: If user asks "compare specs", "specifications", "features comparison", or similar technical queries, respond with ONLY a clean specs table. NO sentiment analysis, NO action items, NO department recommendations. Just specs.
-
+9. **"TELL ME ABOUT [CAR]" QUERIES**: Include a **📋 KEY SPECS** section 
+   with price, engine, mileage, safety rating, and key features from 
+   the VEHICLE SPECIFICATIONS data. Show specs BEFORE the action items.
 === REFERENCE DATA (for context, but use stats from tables above) ===
 {data}
 
