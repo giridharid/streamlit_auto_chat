@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smaartbrand Auto | Maruti POC</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -430,13 +429,17 @@ ${data.ai_enabled ? '🟢 **AI is ACTIVE** - Full AI responses enabled!' : '🟡
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
           <div className="bg-white border-b shadow-sm px-4 py-3">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-xl">
-                  🚗
-                </div>
-                <div>
-                  <h1 className="text-lg font-bold text-gray-900">Smaartbrand Auto</h1>
-                  <p className="text-xs text-gray-500 hidden sm:block">DeciPro DECIDE Engine • Maruti POC</p>
+              <div className="flex items-center gap-4">
+                <img src="/static/acquink_logo.png" alt="Acquink" className="h-7 hidden sm:block" />
+                <div className="h-6 w-px bg-gray-300 hidden sm:block"></div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-xl">
+                    🚗
+                  </div>
+                  <div>
+                    <h1 className="text-lg font-bold text-gray-900">Smaartbrand Auto</h1>
+                    <p className="text-xs text-gray-500 hidden sm:block">DeciPro DECIDE Engine • Maruti POC</p>
+                  </div>
                 </div>
               </div>
 
@@ -464,6 +467,16 @@ ${data.ai_enabled ? '🟢 **AI is ACTIVE** - Full AI responses enabled!' : '🟡
 
           <div className="max-w-7xl mx-auto">
             {activeView === 'dashboard' ? <DashboardView /> : <ChatView />}
+          </div>
+
+          {/* Footer */}
+          <div className="border-t bg-white mt-8 py-4 px-4">
+            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <img src="/static/acquink_logo.png" alt="Acquink" className="h-6" />
+              </div>
+              <p className="text-xs text-gray-500">Copyright © Acquink | All rights reserved 2025</p>
+            </div>
           </div>
         </div>
       );
