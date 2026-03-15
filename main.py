@@ -266,7 +266,26 @@ If query is in Hindi, Tamil, Telugu, Kannada:
 
 === REFERENCE DATA (for context, but use stats from tables above) ===
 {data}
+
+=== VEHICLE SPECIFICATIONS (Use for technical comparisons) ===
+{specs}
 """
+
+
+# ============== LOAD CAR SPECS ==============
+
+def load_car_specs(filepath: str = "car_specs.json") -> dict:
+    """Load vehicle specifications from JSON file"""
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+    except Exception as e:
+        print(f"Error loading specs: {e}")
+        return {}
+
+CAR_SPECS = load_car_specs()
 
 
 # ============== DYNAMIC DATA LOADING FROM CSVs ==============
@@ -505,7 +524,11 @@ class ChatQuery(BaseModel):
 async def call_claude_api(query: str, api_key: str) -> str:
     """Call Claude API with enhanced automotive prompt"""
     
-    system = SYSTEM_PROMPT.format(data=json.dumps(SENTIMENT_DATA, indent=2, default=str))
+    specs_str = json.dumps(CAR_SPECS, indent=2, default=str) if CAR_SPECS else "{}"
+    system = SYSTEM_PROMPT.format(
+        data=json.dumps(SENTIMENT_DATA, indent=2, default=str),
+        specs=specs_str
+    )
     
     async with httpx.AsyncClient(timeout=60.0) as client:
         response = await client.post(
